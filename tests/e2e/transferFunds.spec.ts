@@ -41,10 +41,8 @@ test.describe('Transfer Funds flow', () => {
     await register.registerUser(user);
     await panel.checkIfLoggedIn();
   
-    // Создаём второй аккаунт, чтобы был выбор
     await openAccount.openNew('SAVINGS');
   
-    // Делаем перевод
     await transfer.makeTransfer(10);
   
     
