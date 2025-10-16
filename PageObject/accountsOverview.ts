@@ -11,11 +11,10 @@ export class AccountsOverviewPage {
     this.page = page;
     this.linkOverview = page.getByRole('link', { name: 'Accounts Overview' });
     this.heading = page.getByRole('heading', { name: 'Accounts Overview' });
-    this.table = page.locator('#accountTable');          // основная таблица
-    this.rows  = this.table.locator('tbody tr');         // строки со счетами
+    this.table = page.locator('#accountTable');         
+    this.rows  = this.table.locator('tbody tr');         
   }
 
-  /** Навигация на страницу обзора счетов */
   async goto() {
     await this.linkOverview.click();
     await this.page.waitForURL('**/overview.htm').catch(async () => {
@@ -26,21 +25,18 @@ export class AccountsOverviewPage {
     await expect(this.table).toBeVisible();
   }
 
-  /** Проверить, что в таблице присутствует счёт с указанным ID */
   async expectAccountPresent(accountId: string) {
     await this.goto();
     await expect(this.table).toContainText(accountId);
   }
 
-  /** Вернуть список всех ID счетов, отображённых в таблице */
   async getAccountIds(): Promise<string[]> {
     await this.goto();
-    const links = this.rows.locator('td a[href*="activity.htm?"]'); // ссылки на аккаунт
+    const links = this.rows.locator('td a[href*="activity.htm?"]'); 
     const texts = await links.allTextContents();
     return texts.map(t => t.trim()).filter(Boolean);
   }
 
-  /** Открыть страницу активности конкретного счёта */
   async openAccountById(accountId: string) {
     await this.goto();
     await this.page.getByRole('link', { name: accountId }).click();
