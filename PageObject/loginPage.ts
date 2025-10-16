@@ -1,4 +1,4 @@
-import { expect, Locator, Page } from '@playwright/test';
+import { expect, Locator, Page } from "@playwright/test";
 
 export class LoginPanel {
   readonly page: Page;
@@ -14,9 +14,9 @@ export class LoginPanel {
     this.usernameInput = page.locator('input[name="username"]');
     this.passwordInput = page.locator('input[name="password"]');
     this.loginButton = page.locator('input.button[value="Log In"]');
-    this.errorMessage = page.locator('.error');
-    this.logoutbtn = page.getByRole('link', { name: 'Log Out' });
-    this.welcomeBanner = page.locator('#rightPanel');
+    this.errorMessage = page.locator(".error");
+    this.logoutbtn = page.getByRole("link", { name: "Log Out" });
+    this.welcomeBanner = page.locator("#rightPanel");
   }
 
   async login(username: string, password: string) {
@@ -26,9 +26,10 @@ export class LoginPanel {
   }
 
   async checkIfLoggedIn() {
-    await expect(this.logoutbtn, 'Log Out btn should appear').toBeVisible();
-    await expect(this.welcomeBanner).toContainText(' Your account was created successfully. You are now logged in.');
-
+    await expect(this.logoutbtn, "Log Out btn should appear").toBeVisible();
+    await expect(this.welcomeBanner).toContainText(
+      " Your account was created successfully. You are now logged in."
+    );
   }
 
   async logoutNow() {

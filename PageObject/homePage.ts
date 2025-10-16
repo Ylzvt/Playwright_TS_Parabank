@@ -1,9 +1,8 @@
-import { Page, Locator, expect } from '@playwright/test';
-
+import { Page, Locator, expect } from "@playwright/test";
 
 export class HomePage {
   goto(arg0: string) {
-      throw new Error('Method not implemented.');
+    throw new Error("Method not implemented.");
   }
   readonly page: Page;
   readonly loginPanel: Locator;
@@ -15,14 +14,13 @@ export class HomePage {
 
   constructor(page: Page) {
     this.page = page;
-    this.loginPanel = page.locator('#leftPanel');
-    this.registerBtn = page.getByRole('link', { name: 'Register' });
+    this.loginPanel = page.locator("#leftPanel");
+    this.registerBtn = page.getByRole("link", { name: "Register" });
     this.username = page.locator('input[name="username"]');
     this.password = page.locator('input[name="password"]');
     this.loginButton = page.locator('input[value="Log In"]');
-    this.errorMessage = page.locator('#rightPanel .error');
+    this.errorMessage = page.locator("#rightPanel .error");
   }
-  
 
   async login(username, password) {
     await this.username.fill(username);

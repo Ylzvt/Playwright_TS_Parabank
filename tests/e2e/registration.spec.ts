@@ -11,19 +11,23 @@ test.describe("@auth Registration", () => {
     const home = new HomePage(page);
     const register = new RegisterPage(page);
     const panel = new LoginPanel(page);
-
-    await page.goto('/')
+    
+    // Register new user and check if logged in
+    await page.goto("/");
     await home.openRegister();
     await register.registerUser(user);
     await panel.checkIfLoggedIn();
   });
 
-  test("Login negative: wrong password  @regression", async ({page,}) => {
+  test("Login negative: wrong password  @regression", async ({ page }) => {
     const home = new HomePage(page);
 
-    await page.goto('/')
+    // Log in with invalid creds and check error message 
+    await page.goto("/");
     await home.login("nonexistent_user", "wrong");
-    await expect(home.errorMessage).toContainText('An internal error has occurred and has been logged.');
+    await expect(home.errorMessage).toContainText(
+      "An internal error has occurred and has been logged."
+    );
   });
 
   test("Login positive with newly created user @smoke", async ({ page }) => {
@@ -32,8 +36,9 @@ test.describe("@auth Registration", () => {
     const home = new HomePage(page);
     const register = new RegisterPage(page);
     const panel = new LoginPanel(page);
-
-    await page.goto('/')
+    
+    // Register new user
+    await page.goto("/");
     await home.openRegister();
     await register.registerUser(user);
     await panel.checkIfLoggedIn();
@@ -41,7 +46,8 @@ test.describe("@auth Registration", () => {
     // Log out and log back in with the same creds
     await panel.logoutNow();
     await panel.login(user.username, user.password);
-    await expect(panel.logoutbtn, 'Log Out btn should appear').toBeVisible({ timeout: 10000 });
-    
-   });
+    await expect(panel.logoutbtn, "Log Out btn should appear").toBeVisible({
+      timeout: 10000,
+    });
+  });
 });

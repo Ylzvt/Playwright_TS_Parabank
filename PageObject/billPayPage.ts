@@ -1,4 +1,4 @@
-import { Page, Locator, expect } from '@playwright/test';
+import { Page, Locator, expect } from "@playwright/test";
 
 export class BillPayPage {
   readonly page: Page;
@@ -20,8 +20,8 @@ export class BillPayPage {
 
   constructor(page: Page) {
     this.page = page;
-    this.btnBillPay = page.getByRole('link', { name: 'Bill Pay' });
-    this.heading = page.getByRole('heading', { name: 'Bill Payment Service' });
+    this.btnBillPay = page.getByRole("link", { name: "Bill Pay" });
+    this.heading = page.getByRole("heading", { name: "Bill Payment Service" });
 
     this.payeeName = page.locator('input[name="payee.name"]');
     this.payeeAddress = page.locator('input[name="payee.address.street"]');
@@ -36,7 +36,7 @@ export class BillPayPage {
     this.fromAccountSelect = page.locator('select[name="fromAccountId"]');
 
     this.sendPaymentBtn = page.locator('input[value="Send Payment"]');
-    this.rightPanel = page.locator('#rightPanel');
+    this.rightPanel = page.locator("#rightPanel");
   }
 
   async goto() {
@@ -70,7 +70,7 @@ export class BillPayPage {
     await this.fromAccountSelect.selectOption({ index: 0 });
 
     await this.sendPaymentBtn.click();
-    await expect(this.rightPanel).toContainText('Bill Payment Complete');
+    await expect(this.rightPanel).toContainText("Bill Payment Complete");
     return await this.rightPanel.textContent();
   }
 }

@@ -1,11 +1,11 @@
-import { test, expect } from '@playwright/test';
-import { HomePage } from '../../PageObject/homePage';
-import { RegisterPage } from '../../PageObject/registerPage';
-import { LoginPanel } from '../../PageObject/loginPage';
-import { OpenAccountPage } from '../../PageObject/openAccount';
-import { BillPayPage } from '../../PageObject/billPayPage';
-import { generateUser } from '../../testData/generateUser';
-import users from '../../testData/users.json' assert { type: 'json' };
+import { test, expect } from "@playwright/test";
+import { HomePage } from "../../PageObject/homePage";
+import { RegisterPage } from "../../PageObject/registerPage";
+import { LoginPanel } from "../../PageObject/loginPage";
+import { OpenAccountPage } from "../../PageObject/openAccount";
+import { BillPayPage } from "../../PageObject/billPayPage";
+import { generateUser } from "../../testData/generateUser";
+import users from "../../testData/users.json" assert { type: "json" };
 
 let home: HomePage;
 let register: RegisterPage;
@@ -14,7 +14,7 @@ let openAccount: OpenAccountPage;
 let billPay: BillPayPage;
 let user: ReturnType<typeof generateUser>;
 
-test.describe('Bill Payment flow', () => {
+test.describe("Bill Payment flow", () => {
   test.beforeEach(async ({ page }) => {
     home = new HomePage(page);
     register = new RegisterPage(page);
@@ -22,17 +22,17 @@ test.describe('Bill Payment flow', () => {
     openAccount = new OpenAccountPage(page);
     billPay = new BillPayPage(page);
     user = generateUser();
-    await page.goto('/');
+    await page.goto("/");
   });
 
-  test('Pay bill using data using testData/users.json @smoke', async () => {
+  test("Pay bill using data using testData/users.json @smoke", async () => {
     // Register and login
     await home.openRegister();
     await register.registerUser(user);
     await panel.checkIfLoggedIn();
 
     // Create extra account to ensure fromAccount exists
-    await openAccount.openNew('SAVINGS');
+    await openAccount.openNew("SAVINGS");
 
     // Get payee data from users.json
     const src = users[0];

@@ -1,4 +1,4 @@
-import { Page, expect } from '@playwright/test';
+import { Page, expect } from "@playwright/test";
 
 export class RegisterPage {
   readonly page: Page;
@@ -30,7 +30,8 @@ export class RegisterPage {
     await this.page.fill('input[name="customer.password"]', data.password);
     await this.page.fill('input[name="repeatedPassword"]', data.password);
     await this.page.click('input[value="Register"]');
-    await expect(this.page.locator('#rightPanel'))
-  .toContainText('Your account was created successfully')
+    await expect(this.page.locator("#rightPanel")).toContainText(
+      "Your account was created successfully"
+    );
   }
 }

@@ -1,4 +1,4 @@
-import { Page, Locator, expect } from '@playwright/test';
+import { Page, Locator, expect } from "@playwright/test";
 
 export class TransferFundsPage {
   readonly page: Page;
@@ -12,13 +12,13 @@ export class TransferFundsPage {
 
   constructor(page: Page) {
     this.page = page;
-    this.btnTransferFunds = page.getByRole('link', { name: 'Transfer Funds' });
-    this.heading = page.getByRole('heading', { name: 'Transfer Funds' });
-    this.amountInput = page.locator('input#amount');
+    this.btnTransferFunds = page.getByRole("link", { name: "Transfer Funds" });
+    this.heading = page.getByRole("heading", { name: "Transfer Funds" });
+    this.amountInput = page.locator("input#amount");
     this.fromAccountSelect = page.locator('select[name="fromAccountId"]');
     this.toAccountSelect = page.locator('select[name="toAccountId"]');
     this.transferButton = page.locator('input[value="Transfer"]');
-    this.successPanel = page.locator('#rightPanel');
+    this.successPanel = page.locator("#rightPanel");
   }
 
   async goto() {
@@ -31,8 +31,8 @@ export class TransferFundsPage {
     await this.goto();
     await this.amountInput.fill(String(amount));
     await this.transferButton.click();
-    await expect(this.page.locator('#rightPanel')).toContainText('Transfer Complete!');
-
-    
+    await expect(this.page.locator("#rightPanel")).toContainText(
+      "Transfer Complete!"
+    );
   }
 }
