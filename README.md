@@ -54,10 +54,10 @@ npm install
 <pre><code># Run all tests (headless)
 npx playwright test
 
-# Run tests in headed mode
+<h2>Run tests in headed mode</h2>
 npx playwright test --headed
 
-# Open HTML report
+<h2> Open HTML report</h2>
 npx playwright show-report
 </code></pre>
 
