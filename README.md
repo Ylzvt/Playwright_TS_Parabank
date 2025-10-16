@@ -15,7 +15,7 @@ Please feel free to share any feedback or suggestions — I’m always eager to 
 <ul>
   <li><strong>Playwright + TypeScript</strong> — built entirely from scratch.</li>
   <li><strong>Page Object Model (POM)</strong> — clean and scalable structure.</li>
-  <li><strong>UI and API test coverage</strong> — both positive and negative scenarios.</li>
+  <li><strong>UI test coverage</strong> — both positive and negative scenarios.</li>
   <li><strong>Custom test data</strong> — stored in <code>testData/users.json</code>.</li>
   <li><strong>HTML test reports</strong> — easy to visualize test results.</li>
   <li><strong>Ready for CI/CD</strong> — easily integrated with GitHub Actions.</li>
