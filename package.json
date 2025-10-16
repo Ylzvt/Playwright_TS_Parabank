@@ -1,0 +1,29 @@
+{
+  "name": "playwright_ts_parabank",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx playwright test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ylzvt/Playwright_TS_Parabank.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Ylzvt/Playwright_TS_Parabank/issues"
+  },
+  "homepage": "https://github.com/Ylzvt/Playwright_TS_Parabank#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.56.0",
+    "@types/dotenv": "^6.1.1",
+    "@types/node": "^24.7.2",
+    "chance": "^1.1.13",
+    "dotenv": "^17.2.3",
+    "mockttp": "^4.2.0"
+  }
+}
