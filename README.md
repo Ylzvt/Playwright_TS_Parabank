@@ -18,7 +18,7 @@ Please feel free to share any feedback or suggestions — I’m always eager to 
   <li><strong>UI and API test coverage</strong> — both positive and negative scenarios.</li>
   <li><strong>Custom test data</strong> — stored in <code>testData/users.json</code>.</li>
   <li><strong>HTML test reports</strong> — easy to visualize test results.</li>
-  <li><strong>Ready for CI/CD</strong> — easily integrated with GitHub Actions or Jenkins.</li>
+  <li><strong>Ready for CI/CD</strong> — easily integrated with GitHub Actions.</li>
 </ul>
 
 <hr>
