@@ -27,6 +27,7 @@ test.describe('Open new account flow', () => {
 
   test('Open new CHECKING account and verify it appears in Accounts Overview @regression', async () => {
    
+    // Register new user
     await home.openRegister();
     await register.registerUser(user);
     await panel.checkIfLoggedIn();
