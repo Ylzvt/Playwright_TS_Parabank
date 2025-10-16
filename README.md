@@ -52,7 +52,7 @@ npm install
 <hr>
 
 <h2>▶️ How to Run Tests</h2>
-<pre><code># Run all tests (headless)
+<pre><code> <h2>Run all tests</h2>(headless)
 npx playwright test
 
  <h2>Run tests in headed mode</h2>
