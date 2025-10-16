@@ -87,4 +87,4 @@ npx playwright show-report
 <h2>👩‍💻 Author</h2>
 <p><strong>Elizabeth Nahorna</strong><br>
 Quality Automation Engineer<br>
-<em>“Learning, testing, and building one framework at a time.”</em></p>
+
