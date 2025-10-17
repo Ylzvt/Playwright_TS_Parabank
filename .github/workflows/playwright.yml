@@ -10,7 +10,7 @@ on:
   workflow_dispatch:
     inputs:
       grep:
-        description: 'Запустить только тесты с тегом/регекcом (пример: @smoke)'
+        description: 'Run tests with @smoke tag'
         required: false
         default: ''
       project:
