@@ -1,0 +1,38 @@
+[
+    {
+      "firstName": "Anna",
+      "lastName": "Kovalenko",
+      "address": "Main Street 1",
+      "city": "Kyiv",
+      "state": "KY",
+      "zip": "00001",
+      "phone": "1234567890",
+      "ssn": "111-22-3333",
+      "usernamePrefix": "qa",
+      "password": "Qwerty123!"
+    },
+    {
+      "firstName": "Maria",
+      "lastName": "Shevchenko",
+      "address": "Freedom Ave 24",
+      "city": "Lviv",
+      "state": "LV",
+      "zip": "79000",
+      "phone": "380971112233",
+      "ssn": "222-33-4444",
+      "usernamePrefix": "qa",
+      "password": "Qwerty123!"
+    },
+    {
+      "firstName": "Diana",
+      "lastName": "Bondarenko",
+      "address": "Park Road 15",
+      "city": "Odesa",
+      "state": "OD",
+      "zip": "65000",
+      "phone": "380631234567",
+      "ssn": "333-44-5555",
+      "usernamePrefix": "qa",
+      "password": "Qwerty123!"
+    }
+  ]
