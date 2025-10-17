@@ -1,10 +1,17 @@
 name: Playwright Tests
 
 on:
-  # Runs every day at 13:00 UTC (09:00 AM in New York during daylight saving time)
+  # Runs every day at 13:00 UTC (09:00 AM New York time)
   schedule:
     - cron: "0 13 * * *"
-  # Allows manual triggering from the Actions tab
+
+  # Runs on every push or pull request to main or master branches
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+  # Allows manual trigger from the Actions tab
   workflow_dispatch:
 
 jobs:
